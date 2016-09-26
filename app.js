@@ -266,11 +266,7 @@ var dataObject = [{
 ];
 
 
-function search(){
-	var value = prompt("Enter Height,Weight,Occupation and EyeColor.Please type your search terms, separated by commas:");
-	var foo = seachByMultipleCriteria(value,dataObject);
-	responder(foo);
-}
+
 function initSearch(){
 	var fname=prompt("Enter first name:");
 	var lname=prompt("Enter last name");
@@ -328,10 +324,15 @@ function initSearch(){
 	var r=findPersonOnAge(value,dataObject);
 	responder(r);
 	var value = prompt("Enter Height or EyeColor or Weight or Occupation or gender")
-	var foo = seachByCriteria(value,dataObject);
-	responder(foo);
+	var resultValue = seachByCriteria(value,dataObject);
+	responder(resultValue);
 	search();
 	}
+}
+function search(){
+	var value = prompt("Enter Height,Weight,Occupation and EyeColor.Please type your search terms, separated by commas:");
+	var searchValue = seachByMultipleCriteria(value,dataObject);
+	responder(searchValue);
 }
 function isName(firstname,lastname){
 	for(var i = 0; i < dataObject.length; i++){
